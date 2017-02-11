@@ -25,8 +25,47 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<h1>Open the lock</h1>
-                <h3>Marcin Dudek</h3>
+				<section>
+					<h1>Open the lock</h1>
+					<h3>Marcin Dudek</h3>
+				</section>
+
+				<section>
+					<h1>About me</h1>
+
+				</section>
+
+				<section>
+					<h2>Safe example no 1<h2>
+					<pre><code class="cs" data-trim contenteditable>
+public void SuperSafeMethod()
+{
+	object locker = new object();
+	lock (locker) // this needs to be safe!
+	{
+
+	}
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Safe example no 2</h2>
+					<pre><code class="cs" data-trim contenteditable>
+public class Maneger
+{
+	private double penetration;
+
+	public void Increment()
+	{
+		lock((object)penetration)
+		{
+			penetration++;
+		}
+	}
+}		
+					</code></pre>
+				</section>
 			</div>
 		</div>
 
