@@ -81,14 +81,13 @@ public class Manager
                 <h2>Mutex</h2>
                 <p><span class="fragment highlight-red">Mut</span>ual <span class="fragment highlight-red">ex</span>clusion</p>
                 <ul>
-                    <li class="fragment">Kernel object</li>
                     <li class="fragment">Named Mutex</li>
                     <li class="fragment">Knows the owner</li>
                 </ul>
                 <aside class="notes">
                     Mutual exclusion - single thread is only able to enter
                     Created inside kernel
-                    Giving a name is makign it system wide
+                    Giving a name is making it system wide
                 </aside>
             </section>
 
@@ -96,17 +95,38 @@ public class Manager
                 <h2>Semaphore</h2>
                 <p></p>
                 <ul>
-                    <li class="fragment">Kernel object</li>
                     <li class="fragment">Named Semaphore</li>
                     <li class="fragment">Knows the owner</li>
                 </ul>
                 <aside class="notes">
                     Mutual exclusion - single thread is only able to enter
                     Created inside kernel
-                    Giving a name is makign it system wide
+                    Giving a name is making it system wide
                 </aside>
             </section>
 
+            <section>
+                <h2>AutoResetEvent vs ManualResetEvent</h2>
+                <p>Base class is EventWaitHandle</p>
+                <ul>
+                    <li class="fragment">Named version only through EventWaitHandle</li>
+                    <li class="fragment">What about owner?</li>
+                </ul>
+                <aside class="notes">
+                </aside>
+            </section>
+
+            <section>
+                <h2>Slim fit</h2>
+                <p></p>
+                <ul>
+                    <li class="fragment">SemaphoreSlim</li>
+                    <li class="fragment">ManualResetEventSlim</li>
+                </ul>
+                <aside class="notes">
+                    
+                </aside>
+            </section>
         </div>
     </div>
 
