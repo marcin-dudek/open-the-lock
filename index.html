@@ -33,12 +33,13 @@
             </section>
 
             <section>
+                <h1>About me</h1>
+                <p></p>
+            </section>
+            
+            <section>
                 <h2>Why threading?</h2>
             </section>
-            <!--<section>
-                <h1>About me</h1>
-
-            </section>-->
 
             <section>
                 <h2>Safe example no 2</h2>
@@ -129,6 +130,51 @@ public class Manager
                 <aside class="notes">
                     
                 </aside>
+            </section>
+
+            <section>
+                <h2>lock</h2>
+                <ul>
+                    <li>Easiest and most common way to protect shared state.</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>lock pre .NET 4.0</h2>
+
+                <pre><code class="cs" data-trim contenteditable>
+Monitor.Enter(locker);
+try
+{
+    // access to shared state
+}
+finally
+{
+    Monitor.Exit(locker);
+}
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>lock post .NET 4.0</h2>
+
+                <pre><code class="cs" data-trim contenteditable>
+bool lockTaken;
+try
+{
+    Monitor.Enter(locker, out lockTaken)
+    // access to shared state
+}
+finally
+{
+    if(lockTaken)
+    {
+        Monitor.Exit(locker);
+    }            
+}
+                </code></pre>
             </section>
         </div>
     </div>
