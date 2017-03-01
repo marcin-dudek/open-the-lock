@@ -34,7 +34,11 @@
 
             <section>
                 <h1>About me</h1>
-                <p></p>
+                <h3>Marcin Dudek</h3>
+                <br/>
+                <br/>
+                <br/>
+                <small>make-sense.it</small>
             </section>
             
             <section>
@@ -42,11 +46,24 @@
             </section>
 
             <section>
-                <h2>Synchronisation mechanisms</h2>
+                <h2>What is synchronisation?</h2>
+                <ul>
+                    <li>Critical section</li>
+                    <li>Critical region</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Synchronisation</h2>
                 <p class="fragment">Kernel objects</p>
                 <p class="fragment">.NET abstractions</p>
             </section>
-            <!--waithandle-->
+
+            <section>
+                <p>WaitHandle</p>
+                <img src="img/WaitHandle.png"/>
+            </section>
+
             <section>
                 <h2>Mutex</h2>
                 <p>Mutual Exclusion</p>
@@ -54,11 +71,6 @@
                     <li class="fragment">Named Mutex</li>
                     <li class="fragment">Knows the owner</li>
                 </ul>
-                <aside class="notes">
-                    Mutual exclusion - single thread is only able to enter
-                    Created inside kernel
-                    Giving a name is making it system wide
-                </aside>
             </section>
 
             <section>
@@ -68,47 +80,35 @@
                     <li class="fragment">Named Semaphore</li>
                     <li class="fragment">Knows the owner</li>
                 </ul>
-                <aside class="notes">
-                    Mutual exclusion - single thread is only able to enter
-                    Created inside kernel
-                    Giving a name is making it system wide
-                </aside>
             </section>
 
             <section>
-                <h2>EventWaitHandle</h2>
                 <p>AutoResetEvent vs ManualResetEvent</p>
                 <ul>
                     <li class="fragment">Named version only through EventWaitHandle</li>
                     <li class="fragment">What about owner?</li>
+                    <li class="fragment">OpenExisting</li>
                 </ul>
-                <aside class="notes">
-                </aside>
             </section>
 
             <section>
                 <h2>Slim versions</h2>
-                <p></p>
                 <ul>
                     <li class="fragment">SemaphoreSlim</li>
                     <li class="fragment">ManualResetEventSlim</li>
                 </ul>
-                <aside class="notes">
-                    
-                </aside>
             </section>
 
             <section>
                 <h2>lock</h2>
                 <ul>
                     <li>Easiest and most common way to protect shared state.</li>
-                    <li></li>
-                    <li></li>
+                    <li>We need only reference type.</li>
                 </ul>
             </section>
 
             <section>
-                <p>Safe example no 2</p>
+                <p>'Safe' example</p>
                 <pre><code class="cs" data-trim contenteditable>
 public class Manager
 {
@@ -124,7 +124,7 @@ public class Manager
             </section>
 
             <section>
-                <p>Safe example no 2</p>
+                <p>'Safe' example</p>
                 <pre><code class="cs" data-trim contenteditable>
 public class Manager
 {
@@ -186,17 +186,25 @@ finally
             </section>
             
             <section>
-                <h2>Thin lock</h2> <!--part 1 -->
-                <p>Object header</p>
+                <h2>lock</h2> <!--part 1 -->
+                <ul>
+                    <li class="fragment">Knows the owner</li>
+                    <li class="fragment">Recursion count</li>
+                </ul>
             </section>
 
             <section>
-                <h2>Thin lock</h2><!--part 2 -->
-                <p></p>
+                <h2>Object in memory</h2> <!--part 1 -->
             </section>
 
             <section>
-                <p>Synchronized</p>
+                <h2>How lock works</h2><!--part 2 -->
+                <p>Thin lock</p>
+                <p>Sygnaling</p>
+            </section>
+
+            <section>
+                <h2>Synchronized</h2>
 
                 <pre><code class="cs" data-trim contenteditable>
 public class Manager
@@ -209,14 +217,30 @@ public class Manager
 
             <section>
                 <h2>ReaderWriterLock</h2>
-                <p></p>
+                <p>Why?</p>
                 <ul>
-                    <li class="fragment">SemaphoreSlim</li>
+                    <li class="fragment">Performance</li>
                     <li class="fragment">There is also slim version!</li>
                 </ul>
-                <aside class="notes">
-                    
-                </aside>
+            </section>
+
+            <section>
+                <h2>Sources</h2>
+                <ul>
+                    <li class="fragment">Concurrent Programming on Windws - Joe Duffy</li>
+                    <li class="fragment">Joe Duffy blog</li>
+                    <li class="fragment">Advanced .NET Debugging - Mario Hewardt</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Q&amp;A</h2>
+                <br/>
+                <br/>
+                <br/>
+                <small>make-sense.it</small>
+                <br/>
+                <small>7.03.2017 (Tuesday)</small>
             </section>
         </div>
     </div>
