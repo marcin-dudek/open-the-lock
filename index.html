@@ -40,7 +40,7 @@
                 <br/>
                 <small>make-sense.it</small>
             </section>
-            
+
             <section>
                 <h2>Why threading?</h2>
             </section>
@@ -61,7 +61,7 @@
 
             <section>
                 <p>WaitHandle</p>
-                <img src="img/WaitHandle.png"/>
+                <img src="img/WaitHandle.png" />
             </section>
 
             <section>
@@ -83,7 +83,8 @@
             </section>
 
             <section>
-                <p>AutoResetEvent vs ManualResetEvent</p>
+                <h2>AutoResetEvent</h2>
+                <h2>ManualResetEvent</h2>
                 <ul>
                     <li class="fragment">Named version only through EventWaitHandle</li>
                     <li class="fragment">What about owner?</li>
@@ -184,9 +185,10 @@ finally
                     <li>Notification (Pulse, PulseAll)</li>
                 </ul>
             </section>
-            
+
             <section>
-                <h2>lock</h2> <!--part 1 -->
+                <h2>lock</h2>
+                <!--part 1 -->
                 <ul>
                     <li class="fragment">Knows the owner</li>
                     <li class="fragment">Recursion count</li>
@@ -194,11 +196,13 @@ finally
             </section>
 
             <section>
-                <h2>Object in memory</h2> <!--part 1 -->
+                <h2>Object in memory</h2>
+                <!--part 1 -->
             </section>
 
             <section>
-                <h2>How lock works</h2><!--part 2 -->
+                <h2>How lock works</h2>
+                <!--part 2 -->
                 <p>Thin lock</p>
                 <p>Sygnaling</p>
             </section>
@@ -227,9 +231,9 @@ public class Manager
             <section>
                 <h2>Sources</h2>
                 <ul>
-                    <li class="fragment">Concurrent Programming on Windws - Joe Duffy</li>
-                    <li class="fragment">Joe Duffy blog</li>
-                    <li class="fragment">Advanced .NET Debugging - Mario Hewardt</li>
+                    <li>Concurrent Programming on Windws - Joe Duffy</li>
+                    <li>Joe Duffy blog</li>
+                    <li>Advanced .NET Debugging - Mario Hewardt</li>
                 </ul>
             </section>
 
@@ -249,17 +253,17 @@ public class Manager
     <script src="js/reveal.js"></script>
 
     <script>
-            // More info https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
-                history: true,
-                // More info https://github.com/hakimel/reveal.js#dependencies
-                dependencies: [
-                    { src: 'plugin/markdown/marked.js' },
-                    { src: 'plugin/markdown/markdown.js' },
-                    { src: 'plugin/notes/notes.js', async: true },
-                    { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-                ]
-            });
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            history: true,
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
     </script>
 </body>
 
