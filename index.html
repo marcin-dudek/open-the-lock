@@ -42,7 +42,73 @@
             </section>
 
             <section>
-                <h2>Safe example no 2</h2>
+                <h2>Synchronisation mechanisms</h2>
+                <p class="fragment">Kernel objects</p>
+                <p class="fragment">.NET abstractions</p>
+            </section>
+            <!--waithandle-->
+            <section>
+                <h2>Mutex</h2>
+                <p>Mutual Exclusion</p>
+                <ul>
+                    <li class="fragment">Named Mutex</li>
+                    <li class="fragment">Knows the owner</li>
+                </ul>
+                <aside class="notes">
+                    Mutual exclusion - single thread is only able to enter
+                    Created inside kernel
+                    Giving a name is making it system wide
+                </aside>
+            </section>
+
+            <section>
+                <h2>Semaphore</h2>
+                <p>Multiple can access critical region</p>
+                <ul>
+                    <li class="fragment">Named Semaphore</li>
+                    <li class="fragment">Knows the owner</li>
+                </ul>
+                <aside class="notes">
+                    Mutual exclusion - single thread is only able to enter
+                    Created inside kernel
+                    Giving a name is making it system wide
+                </aside>
+            </section>
+
+            <section>
+                <h2>EventWaitHandle</h2>
+                <p>AutoResetEvent vs ManualResetEvent</p>
+                <ul>
+                    <li class="fragment">Named version only through EventWaitHandle</li>
+                    <li class="fragment">What about owner?</li>
+                </ul>
+                <aside class="notes">
+                </aside>
+            </section>
+
+            <section>
+                <h2>Slim versions</h2>
+                <p></p>
+                <ul>
+                    <li class="fragment">SemaphoreSlim</li>
+                    <li class="fragment">ManualResetEventSlim</li>
+                </ul>
+                <aside class="notes">
+                    
+                </aside>
+            </section>
+
+            <section>
+                <h2>lock</h2>
+                <ul>
+                    <li>Easiest and most common way to protect shared state.</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </section>
+
+            <section>
+                <p>Safe example no 2</p>
                 <pre><code class="cs" data-trim contenteditable>
 public class Manager
 {
@@ -58,7 +124,7 @@ public class Manager
             </section>
 
             <section>
-                <h2>Safe example no 2</h2>
+                <p>Safe example no 2</p>
                 <pre><code class="cs" data-trim contenteditable>
 public class Manager
 {
@@ -76,85 +142,7 @@ public class Manager
             </section>
 
             <section>
-                <h2>Synchronisation mechanisms</h2>
-                <p class="fragment">Kernel objects</p>
-                <p class="fragment">.NET abstractions</p>
-            </section>
-            <!--waithandle-->
-            <section>
-                <h2>Mutex</h2>
-                <p><span class="fragment highlight-red">Mut</span>ual <span class="fragment highlight-red">ex</span>clusion</p>
-                <ul>
-                    <li class="fragment">Named Mutex</li>
-                    <li class="fragment">Knows the owner</li>
-                </ul>
-                <aside class="notes">
-                    Mutual exclusion - single thread is only able to enter
-                    Created inside kernel
-                    Giving a name is making it system wide
-                </aside>
-            </section>
-
-            <section>
-                <h2>Semaphore</h2>
-                <p></p>
-                <ul>
-                    <li class="fragment">Named Semaphore</li>
-                    <li class="fragment">Knows the owner</li>
-                </ul>
-                <aside class="notes">
-                    Mutual exclusion - single thread is only able to enter
-                    Created inside kernel
-                    Giving a name is making it system wide
-                </aside>
-            </section>
-
-            <section>
-                <h2>AutoResetEvent vs ManualResetEvent</h2>
-                <p>Base class is EventWaitHandle</p>
-                <ul>
-                    <li class="fragment">Named version only through EventWaitHandle</li>
-                    <li class="fragment">What about owner?</li>
-                </ul>
-                <aside class="notes">
-                </aside>
-            </section>
-
-            <section>
-                <h2>Slim fit</h2>
-                <p></p>
-                <ul>
-                    <li class="fragment">SemaphoreSlim</li>
-                    <li class="fragment">ManualResetEventSlim</li>
-                </ul>
-                <aside class="notes">
-                    
-                </aside>
-            </section>
-
-            <section>
-                <h2>ReaderWriterLock</h2>
-                <p></p>
-                <ul>
-                    <li class="fragment">SemaphoreSlim</li>
-                    <li class="fragment">There is also slim version!</li>
-                </ul>
-                <aside class="notes">
-                    
-                </aside>
-            </section>
-
-            <section>
-                <h2>lock</h2>
-                <ul>
-                    <li>Easiest and most common way to protect shared state.</li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>lock pre .NET 4.0</h2>
+                <p>lock - pre .NET 4.0</p>
 
                 <pre><code class="cs" data-trim contenteditable>
 Monitor.Enter(locker);
@@ -170,7 +158,7 @@ finally
             </section>
 
             <section>
-                <h2>lock post .NET 4.0</h2>
+                <p>lock - post .NET 4.0</p>
 
                 <pre><code class="cs" data-trim contenteditable>
 bool lockTaken;
@@ -191,12 +179,44 @@ finally
 
             <section>
                 <h2>Monitor</h2>
-                
+                <ul>
+                    <li>Critical section (Enter, Exit) </li>
+                    <li>Notification (Pulse, PulseAll)</li>
+                </ul>
             </section>
             
             <section>
-                <h2></h2>
+                <h2>Thin lock</h2> <!--part 1 -->
+                <p>Object header</p>
+            </section>
+
+            <section>
+                <h2>Thin lock</h2><!--part 2 -->
                 <p></p>
+            </section>
+
+            <section>
+                <p>Synchronized</p>
+
+                <pre><code class="cs" data-trim contenteditable>
+public class Manager
+{
+    [MethodImplAttribute(MethodImplOptions.Synchronized)] 
+    public void Increment(){ }
+}
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>ReaderWriterLock</h2>
+                <p></p>
+                <ul>
+                    <li class="fragment">SemaphoreSlim</li>
+                    <li class="fragment">There is also slim version!</li>
+                </ul>
+                <aside class="notes">
+                    
+                </aside>
             </section>
         </div>
     </div>
